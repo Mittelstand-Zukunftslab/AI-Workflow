@@ -1,9 +1,11 @@
 ---
 name: create-prd
 description: >-
-  Drafts or revises a PRD from a wishlist or stated goals, with explicit quality
-  checks and traceability. Use when the user wants a PRD, product requirements,
-  scope document, or formal requirements before implementation.
+  Drafts or revises a PRD at docs/prd.md from a wishlist or stated goals, with
+  clarifying questions, quality checks, and traceability to wishes. Use when
+  the user wants a PRD, product requirements, a scope document, or formal
+  requirements before implementation. Triggers on: create a prd, write prd for,
+  plan this feature, requirements for, spec out.
 ---
 
 # Create PRD
@@ -11,6 +13,8 @@ description: >-
 ## Goal
 
 Produce **`docs/prd.md`** that is **complete enough to derive stories and tests**, with requirements **traceable** to wishes or goals.
+
+**Do not implement.** Stop after `docs/prd.md` is written.
 
 ## Inputs (in order)
 
@@ -20,6 +24,29 @@ Produce **`docs/prd.md`** that is **complete enough to derive stories and tests*
 ## Output
 
 - **Primary:** `docs/prd.md`
+
+## Clarify first
+
+Before drafting, ask **3–5** lettered questions only where the wishlist or prompt is ambiguous. Skip anything already answered.
+
+Focus on:
+
+- **Problem/Goal:** What problem does this solve?
+- **Core behavior:** What are the key actions?
+- **Boundaries:** What should it not do?
+- **Success:** How do we know it is done?
+
+Indent the options so the user can reply `1A, 2C`:
+
+```
+1. What is the primary goal?
+   A. ...
+   B. ...
+   C. ...
+   D. Other: [please specify]
+```
+
+If the user says to proceed, record the chosen default as **(assumption)** in the PRD.
 
 ## Required sections in `docs/prd.md`
 
@@ -38,6 +65,22 @@ Use clear headings; adapt subsections if the domain is tiny, but **do not omit**
 11. **Traceability** — matrix: `FR-*` → `W-*` (wishlist ids) or → **Goal** if no wishlist.
 12. **Open questions** — numbered, owner **TBD** allowed.
 
+Do not add `US-*` stories. **`create-story`** owns `S-*` files and their acceptance criteria.
+
+## Write for a junior reader
+
+The reader may be a junior developer or an agent:
+
+- Be explicit and unambiguous. Explain jargon.
+- Keep requirement ids stable and numbered.
+- Use concrete examples.
+
+Bad: "Works correctly."
+
+Good: "The delete control opens a confirmation dialog before the interview is removed."
+
+Apply that bar to functional requirements. Do not add a browser-verification line.
+
 ## PRD quality gates (run before finalizing)
 
 Self-check and **fix or flag** in the Open questions section:
@@ -51,10 +94,11 @@ Self-check and **fix or flag** in the Open questions section:
 
 ## Process
 
-1. Read inputs; list **ambiguities** and propose defaults—label defaults **(assumption)** in the PRD.
-2. Draft `docs/prd.md` with ids **stable** (`FR-001`…); do not renumber existing ids when updating—append new ones.
-3. Run **PRD quality gates**; iterate once for obvious gaps.
-4. Summarize in chat: scope, count of FRs, top risks, open questions count.
+1. Read inputs; list **ambiguities**.
+2. Ask the clarifying questions above. Label unresolved defaults **(assumption)** in the PRD.
+3. Draft `docs/prd.md` with ids **stable** (`FR-001`…); do not renumber existing ids when updating—append new ones.
+4. Run **PRD quality gates**; iterate once for obvious gaps.
+5. Summarize in chat: scope, count of FRs, top risks, open questions count.
 
 ## Handoff
 
