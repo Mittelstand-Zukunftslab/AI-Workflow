@@ -1,0 +1,68 @@
+export const products = [
+  {
+    id: 'p1',
+    name: 'Canvas Weekender Bag',
+    price: 89.0,
+    category: 'Bags',
+    image: 'https://picsum.photos/seed/p1/600/600',
+    description: 'A durable canvas weekender with leather trim, built for short trips.',
+  },
+  {
+    id: 'p2',
+    name: 'Ceramic Pour-Over Set',
+    price: 42.5,
+    category: 'Home',
+    image: 'https://picsum.photos/seed/p2/600/600',
+    description: 'Hand-glazed ceramic dripper and carafe for slow mornings.',
+  },
+  {
+    id: 'p3',
+    name: 'Merino Wool Beanie',
+    price: 28.0,
+    category: 'Apparel',
+    image: 'https://picsum.photos/seed/p3/600/600',
+    description: 'Soft, breathable merino wool beanie in a relaxed fit.',
+  },
+  {
+    id: 'p4',
+    name: 'Walnut Desk Organizer',
+    price: 54.0,
+    category: 'Home',
+    image: 'https://picsum.photos/seed/p4/600/600',
+    description: 'Solid walnut organizer with compartments for pens, cards, and notes.',
+  },
+  {
+    id: 'p5',
+    name: 'Recycled Rain Jacket',
+    price: 128.0,
+    category: 'Apparel',
+    image: 'https://picsum.photos/seed/p5/600/600',
+    description: 'Lightweight waterproof shell made from recycled nylon.',
+  },
+  {
+    id: 'p6',
+    name: 'Leather Card Wallet',
+    price: 39.0,
+    category: 'Bags',
+    image: 'https://picsum.photos/seed/p6/600/600',
+    description: 'Slim full-grain leather wallet that ages beautifully.',
+  },
+  {
+    id: 'p7',
+    name: 'Cast Iron Skillet',
+    price: 65.0,
+    category: 'Home',
+    image: 'https://picsum.photos/seed/p7/600/600',
+    description: 'Pre-seasoned 10-inch cast iron skillet for stovetop or oven.',
+  },
+  {
+    id: 'p8',
+    name: 'Trail Running Socks (2-Pack)',
+    price: 18.0,
+    category: 'Apparel',
+    image: 'https://picsum.photos/seed/p8/600/600',
+    description: 'Cushioned, moisture-wicking socks built for the trail.',
+  },
+]
+
+export const categories = ['All', ...new Set(products.map((p) => p.category))]
